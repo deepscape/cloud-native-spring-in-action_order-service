@@ -11,6 +11,13 @@ repositories {
     mavenCentral()
 }
 
+// 스프링부트 설정 프로세서
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -27,6 +34,7 @@ dependencies {
     testImplementation 'org.testcontainers:postgresql'
     testImplementation 'org.testcontainers:r2dbc'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 }
 
 tasks.named('test') {
