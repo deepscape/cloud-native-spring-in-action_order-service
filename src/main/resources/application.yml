@@ -11,6 +11,9 @@ spring:
     name: order-service
   lifecycle:
     timeout-per-shutdown-phase: 15s
+  cloud:
+    config:
+      enabled: false
   r2dbc:
     username: user
     password: password
